@@ -1,0 +1,24 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding: .5rem;
+}
+
+nav div {
+    padding: .5rem 0;
+    margin: 0 .5rem;
+}
+
+nav div a {
+    border-radius: .5rem;
+    transition: all .1s ease-in-out;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: black;
+}
+
+nav div a:hover {
+    background-color: #ddd;
+}
