@@ -38,25 +38,25 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [hasNextPage, setHasNextPage] = useState(true);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `${api}/photos/random?client_id=${accessKey}&count=${size}`
-  //       );
-  //       if (!response.ok) {
-  //         throw new Error(`HTTP error! Status: ${response.status}`);
-  //       }
-  //       const jsonData = await response.json();
-  //       setPhotos(jsonData);
-  //       console.log(jsonData);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `${api}/photos/random?client_id=${accessKey}&count=${size}`
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const jsonData = await response.json();
+        setPhotos(jsonData);
+        console.log(jsonData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -72,11 +72,11 @@ export default function Home() {
         <span className="focus-border"></span>
       </div>
       <div className="photo-container">
-        {/* {photos.map((photo) => (
+        {photos.map((photo) => (
             <div className="photo" key={photo.id} >
               <img src={photo.urls.small} alt="" />
             </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );
